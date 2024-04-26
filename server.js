@@ -33,6 +33,7 @@ const corsOption = {
         "http://localhost:4173",
         "http://localhost:3000",
         process.env.CLIENT_URL,
+        "https://randomchatapp.vercel.app",
     ],
     methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true,
