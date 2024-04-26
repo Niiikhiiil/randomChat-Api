@@ -29,6 +29,8 @@ const __dirname = path.resolve()
 
 const corsOption = {
     origin: ['http://localhost:3000', 'https://randomchatapp.vercel.app'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Origin', 'X-Requested-With', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization'],
     credentials: true,
 }
 
