@@ -28,13 +28,7 @@ import { app, server } from './socket/socket.js';
 const __dirname = path.resolve()
 
 const corsOption = {
-    origin: [
-        "http://localhost:5173",
-        "http://localhost:4173",
-        "http://localhost:3000",
-        process.env.CLIENT_URL,
-    ],
-    methods: ["POST", "GET", "PUT", "DELETE"],
+    origin: ['http://localhost:3000', 'https://randomchatapp.vercel.app'],
     credentials: true,
 }
 
@@ -49,16 +43,10 @@ app.use("/api/messages", messageRoute);
 app.use("/api/users", userRoute);
 
 
-// app.use(express.static(path.join(__dirname, "/frontend/build")))
-// app.get("*", (req, res) => {
-//     res.sendFile(path.join(__dirname, "frontend", "build", "index.html"))
-// })
-
-app.get('*',(req,res,next)=>{
-    res.status(200).json({
-      message:'Helllo I am API'
-    })
-  })
+// app.use(express.static(path.join(__dirname,"/frontend/build")))
+app.get("*", (req, res) =>{
+    res.send()
+} )
 
 server.listen(PORT, () => {
     connectToMongoDB();
